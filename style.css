@@ -1,0 +1,190 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+:root{
+  --background: #fefefe;
+  --lightblue: #22a6b3;
+  --light-lightblue: #7ed6df;
+  --violet: #be2edd;
+  --light-violet: #e056fd;
+  --orange: #f0932b;
+  --light-orange: #ffbe76;
+  --green: #6ab04c;
+  --light-green: #badc58;
+  --btn-background: #ecf0f1;
+  --black: #000;
+  --light: #fff;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* -- Game -- */
+.gameboard {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  height: 100%;
+  width: 100%;
+  max-height: 50vh;
+  max-width: 50vh;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+/* -- Options -- */
+.color {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.lightblue {
+  background-color: var(--lightblue);
+}
+.lightblue.light {
+  background-color: var(--light-lightblue);
+}
+.violet {
+  background-color: var(--violet);
+}
+.violet.light {
+  background-color: var(--light-violet);
+}
+.orange {
+  background-color: var(--orange);
+}
+.orange.light {
+  background-color: var(--light-orange);
+}
+.green {
+  background-color: var(--green);
+}
+.green.light {
+  background-color: var(--light-green);
+}
+/* -- Button -- */
+.btn {
+  width: 20rem;
+  height:6rem;
+  background-color: var(--btn-background);
+  box-shadow: inset -.2em -.2em rgba(0,0,0,.2);
+  color: var(--black);
+  position: absolute;
+  top: calc(50% - 3rem);
+  left: calc(50% - 10rem);
+  z-index: 2;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: .5rem;
+  padding: .6em 0.3em;
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  opacity: 1;
+  transition: transform .4s ease;
+}
+.btn:active {
+  transform: scale(.98);
+}
+.btn.appear {
+  animation: appear 500ms linear forwards;
+}
+.btn.disappear {
+  animation: disappear 250ms linear forwards;
+}
+.btn.hide {
+  display: none;
+}
+/* -- Show -- */
+.show {
+  background-color: rgba(0, 0, 0, .7);
+  width: 20rem;
+  height: 6rem;
+  position: absolute;
+  top: calc(50% - 3rem);
+  left: calc(50% - 10rem);
+  z-index: 2;
+  opacity: 0;
+  font-size: 3em;
+  font-weight: 600;
+  color: var(--light);
+  border-radius: .5rem;
+  line-height: 1.9em;
+  text-align: center;
+  animation: show 750ms linear 2 alternate forwards;
+  /* When you click one option, the color turns off after 500ms  */
+  animation-delay: 500ms;
+}
+.show.result {
+  height: 12rem;
+  top: calc(50% - 6rem);
+  line-height: 1.8em;
+}
+@keyframes appear {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: .8;
+  }
+  40% {
+    opacity: .6;
+  }
+  60% {
+    opacity: .4;
+  }
+  80% {
+    opacity: .2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: .2;
+  }
+  40% {
+    opacity: .4;
+  }
+  60% {
+    opacity: .6;
+  }
+  80% {
+    opacity: .8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  0% {
+    opacity: .1;
+    transform: scale(.2);
+  }
+  25% {
+    opacity: .4;
+    transform:  scale(.4);
+  }
+  50% {
+    opacity: .6;
+    transform:  scale(.6);
+  }
+  75% {
+    opacity: .8;
+    transform:  scale(.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

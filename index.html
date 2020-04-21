@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="gameboard" class="gameboard">
+      <div id="lightblue" class="color lightblue left" data-color="lightBlue"></div>
+      <div id="violet" class="color violet right" data-color="violet"></div>
+      <div id="orange" class="color orange left" data-color="orange"></div>
+      <div id="green" class="color green right" data-color="green"></div>
+      <button id="btnStart" class="btn btn-start" onclick="startGame()">
+        Let's start to play!
+      </button>
+    </div>
+    <!-- SweetAlert JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
